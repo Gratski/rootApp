@@ -1,6 +1,8 @@
 require 'pp'
 class ArticlesController < ApplicationController
-  
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
+
+
   #PAGE LOAD
   def new
     @article = Article.new
@@ -27,17 +29,14 @@ class ArticlesController < ApplicationController
 
   #SHOW ARTICLE
   def show
-    @article = Article.find(params[:id])
   end
 
   #EDIT
   def edit
-    @article = Article.find(params[:id])
   end
 
   #UPDATE
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params) then
       flash[:notice] = 'Successfully updated'
       redirect_to article_path(@article)
@@ -48,7 +47,6 @@ class ArticlesController < ApplicationController
 
   #DELETE
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     flash[:notice] = "The article was successfully deleted"
     redirect_to articles_path
@@ -56,6 +54,9 @@ class ArticlesController < ApplicationController
 
 
   private
+    def set_article
+      @article = Article.find(params[:id])
+    end
     def article_params
       params.require(:article).permit(:title, :description)
       
