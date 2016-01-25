@@ -1,0 +1,29 @@
+<h2>Edit an article</h2>
+
+
+<% if @article == nil || @article.errors.any? then %>
+  UPSSS
+<% end %>
+
+
+
+
+
+<%= form_for @article do |art| %>
+  <p>
+    <%= art.label :title %><br>
+    <%= art.text_field :title %>
+  </p>
+
+  <p>
+    <%= art.label :description %><br>
+    <%= art.text_area :description %>
+  </p>
+
+  <p>
+    <%= art.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to '< back', articles_path %>
