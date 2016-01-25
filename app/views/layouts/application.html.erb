@@ -8,14 +8,11 @@
 </head>
 <body>
 
-MENUUUUUUUU<br>
+<!-- MENU -->
+<%= render 'layouts/menu' %>
 
-<% flash.each do |name, msg| %>
-  <ul>
-    <li><%= msg %></li>
-  </ul>
-<% end %>
-
+<!-- MESSAGES -->
+<%= render 'layouts/messages' %>
 
 <!-- VIEWS -->
 <%= yield %>
