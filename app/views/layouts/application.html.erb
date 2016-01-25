@@ -9,13 +9,18 @@
 <body>
 
 <!-- MENU -->
-<%= render 'layouts/menu' %>
+<%= render 'layouts/navigation' %>
 
 <!-- MESSAGES -->
 <%= render 'layouts/messages' %>
 
 <!-- VIEWS -->
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
+
+<!-- FOOTER -->
+<%= render 'layouts/footer' %>
 
 </body>
 </html>
