@@ -44,6 +44,17 @@ $navbar-default-bg: #eaeaea;
   margin-top: 0;
 }
 
+.article-title{
+  font-weight: bold;
+  font-size:1.5em;
+}
+
+.article-description{
+  border-top: 1px solid #eaeeae;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
