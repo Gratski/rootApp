@@ -10,6 +10,10 @@
       </div>
       <div class="article-description">
         <%= truncate(article.description, length: 10) %>
+        <br>
+        <small>
+          <%= time_ago_in_words( article.created_at ) %> ago<br>
+        </small>
       </div>
     
       <div class="article-actions">
