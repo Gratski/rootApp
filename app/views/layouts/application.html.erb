@@ -22,5 +22,8 @@
 <!-- FOOTER -->
 <%= render 'layouts/footer' %>
 
+<!-- DEBUG -->
+<%= debug(params) if Rails.env.development? %>
+
 </body>
 </html>

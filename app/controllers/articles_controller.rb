@@ -15,7 +15,9 @@ class ArticlesController < ApplicationController
 
   #NEW ARTICLE
   def create
+    #debugger - this is just to debug
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save then
       #good
       flash[:success] = "article was successfully created"
