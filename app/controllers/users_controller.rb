@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :find_user, only: [ :edit, :update, :show ]
+
   def new
     @user = User.new
   end
@@ -16,10 +18,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params) then
       flash[:success] = 'Updated!'
       redirect_to articles_path
@@ -29,6 +29,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+  end
+
 
   private
   def user_params
@@ -36,6 +39,9 @@ class UsersController < ApplicationController
   end
   def user_params_except_pass
     params.require(:user).permit(:username)
+  end
+  def find_user
+    @user = User.find(params[:id])
   end
 
 
