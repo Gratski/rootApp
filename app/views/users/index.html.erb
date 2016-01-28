@@ -1,0 +1,23 @@
+<h1>Users list</h1>
+
+<div class="row center">
+  
+  <% @users.each do |user| %>
+    <div class="col-xs-4 col-xs-offset-4 well">
+      
+      <ul class="listing">
+        <li>
+          <%= link_to(grab_picture(user), user_path(user) ) if user.email %>
+        </li>
+        <li>
+          <%= link_to user.username, user_path(user) %>
+        </li>
+        <li>
+          <%= user.articles.count %> articles created
+        </li>
+      </ul>
+
+    </div>
+  <% end %>
+
+</div>

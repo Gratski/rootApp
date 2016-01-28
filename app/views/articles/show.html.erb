@@ -2,6 +2,28 @@
   <%= @article.title %>
 </h2>
 <div class="well col-xs-8 col-xs-offset-2">
+  
+  <div class="center">
+    <% if @article.user %>
+      <ul class="listing">
+        <li>
+          <small>
+            created by
+          </small>
+        </li>
+        <li>
+          <%= link_to(grab_picture(@article.user), user_path(@article.user) ) if @article.user.email %>
+        </li>
+        <li>
+          <%= link_to @article.user.username, user_path(@article.user) %>
+        </li>
+        <li>
+          <%= @article.user.articles.count %> articles created
+        </li>
+      </ul>
+    <% end %>
+  </div>
+
   <h4 class="center description"><strong>Description:</strong></h4>
   <hr>
   <%= simple_format(@article.description) %>
