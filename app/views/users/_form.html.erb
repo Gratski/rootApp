@@ -1,0 +1,52 @@
+<%= render 'shared/errors.html', obj: @user %>
+
+<%= form_for(@user, :html => {class: 'form_horizontal', role: 'form'}) do |usr| %>
+    
+  <div class="row">
+    
+    <div class="col-xs-12">      
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= usr.label :username %>
+        </div>
+        <div class="col-sm-10">
+          <%= usr.text_field :username, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= usr.label :email %>
+        </div>
+        <div class="col-sm-10">
+          <%= usr.email_field :email, class: 'form-control' %>
+        </div>
+      </div> 
+    </div>
+
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="control-label col-xs-2">
+          <%= usr.label :password %>
+        </div>
+        <div class="col-xs-10">
+          <%= usr.password_field :password, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="col-xs-10 col-xs-offset-2">
+          <%= usr.submit( @user.new_record? ? 'Signup' : 'Update', class: 'btn btn-lg btn-primary' ) %>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+  </div>
+
+<% end %>
