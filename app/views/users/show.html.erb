@@ -5,4 +5,7 @@
 </div>
 
 <h3>Articles</h3>
-<%= render 'articles/article', {articles: @user.articles} %>
+<div>
+  <%= will_paginate @user_articles %>
+</div>
+<%= render 'articles/article', {articles: @user_articles} %>

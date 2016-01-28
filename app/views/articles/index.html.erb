@@ -2,5 +2,9 @@
 
 <p><%= link_to 'New article', new_article_path %></p>
 
+<div>
+  <%= will_paginate %>
+</div>
+
 <!-- Articles list template -->
 <%= render 'article', {articles: @articles} %>
