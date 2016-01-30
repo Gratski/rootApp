@@ -1,0 +1,9 @@
+<h1>index of categories</h1>
+
+<%= will_paginate %>
+<% @categories.each do |cat| %>
+  
+  <p><%= link_to cat.name, category_path(cat) %></p>
+
+<% end %>
+<%= will_paginate %>

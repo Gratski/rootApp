@@ -19,6 +19,12 @@
         <li>
           <%= user.articles.count %> articles created
         </li>
+        <li>
+          <% if logged_in? && current_user.admin? %>
+            <%= link_to 'delete user', user_path(user), method: :delete, 
+            data: {confirm: 'Are you sure you want to delete user ' + user.username + '?'} %>
+          <% end %>
+        </li>
       </ul>
 
     </div>

@@ -1,0 +1,13 @@
+<h1>
+  new category
+</h1>
+
+<%= render 'shared/errors', {obj: @category} %>
+
+<%= form_for @category do |cat| %>
+  
+  <%= cat.label :name %><br>
+  <%= cat.text_field :name %><br>
+  <%= cat.submit %>
+
+<% end %>
