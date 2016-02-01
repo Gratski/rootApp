@@ -28,6 +28,12 @@
   <hr>
   <%= simple_format(@article.description) %>
 
+  <div class="col-xs-12">
+    <% @article.categories.each do |category| %>
+      <p><%= category.name %></p>
+    <% end %>
+  </div>
+
   <div class="article-actions">
   
     <%= link_to '< back', articles_path, class: "btn btn-xs btn-success" %>

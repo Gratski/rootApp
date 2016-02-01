@@ -3,7 +3,7 @@
 <%= will_paginate %>
 <% @categories.each do |cat| %>
   
-  <p><%= link_to cat.name, category_path(cat) %></p>
+  <p><%= link_to (cat.name + "(#{cat.articles.count})"), category_path(cat) %></p>
 
 <% end %>
 <%= will_paginate %>

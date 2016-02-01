@@ -1,1 +1,11 @@
-show category
+<h1><%= @category.name %>, <%= @category.articles.count if @category.articles.any? %></h1>
+
+<h3>List</h3>
+
+<%= will_paginate @category_articles %>
+<% if @category.articles.any? %>
+  
+  <%= render "articles/article", {articles: @category_articles} %>
+
+<% end %>
+<%= will_paginate @category_articles %>
